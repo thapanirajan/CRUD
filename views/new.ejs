@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create new post</title>
+    <style>
+      .container {
+        position: relative;
+        height: 100vh;
+      }
+      form {
+        /* border: 1px solid; */
+        width: fit-content;
+        height: 10vw;
+        width: 20vw;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      input {
+        width: 75%;
+        height: 20%;
+        font-size: 1.3rem;
+      }
+      textarea {
+        font-size: 1.3rem;
+      }
+      button {
+        padding: 1vw 5vw;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form method="post" action="/posts">
+        <input
+          required
+          type="text"
+          name="username"
+          placeholder="username"
+        /><br /><br />
+        <textarea
+          required
+          cols="33"
+          rows="4"
+          placeholder="write your post"
+          name="content"
+        ></textarea>
+        <br /><br />
+        <button>Submit post</button>
+      </form>
+    </div>
+  </body>
+</html>

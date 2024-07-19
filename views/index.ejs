@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POSTS</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .Delete {
+        background-color: hsl(0, 100%, 53%);
+        font-weight: bold;
+        padding: 0.4rem 1.5rem;
+        border-radius: 1rem;
+        color: white;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Quora posts</h1>
+    <a class="btn" href="http://localhost:3000/posts/new">Create new post</a>
+    <% for(post of posts){ %>
+    <div class="container">
+      <div class="box">
+        <div>
+          <h2><small>Username: </small> <%= post.username%></h2>
+          <h2><small>Content: </small> <%= post.content%></h2>
+        </div>
+        <div class="secondDiv">
+          <button class="gg">
+            <a class="details" href="http://localhost:3000/posts/<%= post.id %>"
+              >See in details</a
+            >
+          </button>
+          <button class="gg">
+            <a
+              class="details"
+              href="http://localhost:3000/posts/<%= post.id %>/edit"
+              >Edit</a
+            >
+          </button>
+          <!-- <div></div> -->
+          <form method="post" action="/posts/<%= post.id%>?_method=DELETE">
+            <button class="Delete">Delete</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <% } %>
+  </body>
+</html>
